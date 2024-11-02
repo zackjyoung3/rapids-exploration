@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "rapids-exploration"
+version = "0.1.0"
+description = "A project that is going to be used in order to test the performance of polars rapids"
+authors = ["zackjyoung3 <zackjyoung3@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+polars = "^1.12.0"
+pandas = "^2.2.3"
+
+[tool.poetry.group.dev]
+optional = true
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.10.0"
+flake8 = "^7.1.1"
+mypy = "^1.13.0"
+
+[tool.poetry.group.test]
+optional = true
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.3.3"
+pytest-mock = "^3.14.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
