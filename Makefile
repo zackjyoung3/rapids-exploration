@@ -18,6 +18,7 @@ help:
 	@echo "  make update             - Update dependencies"
 	@echo "  make run                - Run the application"
 	@echo "  make test               - Run tests"
+	@echo "  make cov-terminal       - Run tests and print coverage for source code files to terminal"
 	@echo "  make format             - Format code with black"
 	@echo "  make lint               - Run flake8 for linting"
 	@echo "  make check              - Check formatting and linting"
@@ -54,6 +55,13 @@ update:
 .PHONY: test
 test:
 	set -x; $(VENV)/bin/pytest $(TEST_DIR)
+
+
+# Run tests and print cov info to terminal
+.PHONY: cov-terminal
+cov-terminal:
+	set -x; $(VENV)/bin/pytest --cov=$(SRC_DIR) --cov-report=term-missing $(TEST_DIR)
+
 
 # Format code with black
 .PHONY: format
